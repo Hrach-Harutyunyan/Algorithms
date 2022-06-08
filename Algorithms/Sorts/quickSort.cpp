@@ -1,6 +1,20 @@
 #include <iostream>
 
-void partition();
+void quickSort(int*, int, int);
+
+
+int main() {
+    
+    int array[] = {95, 45, 48, 98, 1, 485, 65, 478, 1, 2325};
+    int n = sizeof(array)/sizeof(array[0]);
+    quickSort(array, 0, n - 1);
+    for(auto a:array) {
+        std::cout << a << " ";
+    }
+
+    return 0;
+}
+
 
 void quickSort(int *array, int low, int high)
 {
@@ -28,17 +42,4 @@ void quickSort(int *array, int low, int high)
         quickSort(array, low, j);
     if (i < high)
         quickSort(array, i, high);
-}
-
-int main() {
-    int array[] = {95, 45, 48, 98, 1, 485, 65, 478, 1, 2325};
-    int n = sizeof(array)/sizeof(array[0]);
-    quickSort(array, 0, n - 1);
-    for(auto a:array) {
-        std::cout << a << " ";
-    }
-
-
-
-    return 0;
 }
